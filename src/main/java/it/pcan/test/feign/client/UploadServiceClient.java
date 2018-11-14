@@ -25,4 +25,8 @@ public interface UploadServiceClient {
     @RequestLine("POST /uploadArray/{folder}")
     public List<UploadInfo> uploadArray(@Param("folder") String folder, @Param("files") MultipartFile[] files, @Param("metadata") UploadMetadata metadata);
 
+    @RequestLine("POST /wx/media_temp")
+    UploadInfo uploadMedia(@Param("type") String type,
+                           @Param("appId") String appId,
+                           @Param("file") MultipartFile multipartFile);
 }
